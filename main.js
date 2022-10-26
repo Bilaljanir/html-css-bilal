@@ -24,13 +24,14 @@ function retrieveGrades(gradeID){
    return grades
 }
 let inputs = document.getElementsByTagName("input")
-for (const input of inputs)
-   input.addEventListener("input",function () {
+for (const input of inputs) {
+   input.addEventListener("input", function () {
       console.log(
-          average(
-              retrieveGrades(["grade-1", "grade-2"])))
+          displayAverage(average(retrieveGrades(["grade-1", "grade-2"])), "average"))
 
    })
+}
+
 function average (gradesArray){
    let sum= 0
    for ( const grades of gradesArray){
@@ -38,6 +39,9 @@ function average (gradesArray){
    }
    return sum / gradesArray.length
 }
+function displayAverage(avg,id){
+   document.getElementById(id).innerText =avg
 
+}
 
 
