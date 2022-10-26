@@ -38,3 +38,11 @@ function pass (avg) {
 
 pass(avg_bil)
 pass(avg_leo)
+
+let tab = [5]
+
+tab.push(6)
+console.log(tab.join("-"));
+tab.every(e => e > 4)
+
+
