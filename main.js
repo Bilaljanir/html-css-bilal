@@ -18,16 +18,19 @@ change.addEventListener("input", function (e){
 
 function retrieveGrades(gradeID){
    let grades =[]
-   for (const gradesIDElement of gradeID){
-      grades.push(parseFloat(document.getElementById(gradesIDElement).value))
+   for (const gradesIDElement of gradeID) {
+      let grade = parseFloat(document.getElementById(gradesIDElement).value)
+      if (!isNaN(grade)) {
+         grades.push(grade)
+      }
+      return grades
    }
-   return grades
 }
 let inputs = document.getElementsByTagName("input")
 for (const input of inputs) {
    input.addEventListener("input", function () {
-      console.log(
-          displayAverage(average(retrieveGrades(["grade-1", "grade-2"])), "average"))
+
+          displayAverage(average(retrieveGrades(["grade-1", "grade-2"])), "average")
 
    })
 }
